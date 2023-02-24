@@ -1,0 +1,50 @@
+﻿<hc:Window x:Class="Toshokan.Dialogs.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Toshokan.Dialogs"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        mc:Ignorable="d"
+        WindowStyle="ToolWindow"
+        ResizeMode="NoResize"
+        Title="Settings" Height="450" Width="450">
+    <TabControl TabStripPlacement="Left">
+        <TabItem Header="General">
+            <StackPanel>
+                <hc:ComboBox hc:InfoElement.Title="Default Startup Page" Margin="5">
+                    <ComboBoxItem Content="Library"/>
+                    <ComboBoxItem Content="Explore"/>
+                    <ComboBoxItem Content="Top 100"/>
+                    <ComboBoxItem Content="Trending"/>
+                    <ComboBoxItem Content="Newly Released"/>
+                    <ComboBoxItem Content="Schedule"/>
+                    <ComboBoxItem Content="Settings"/>
+                </hc:ComboBox>
+            </StackPanel>
+        </TabItem>
+        
+        <TabItem Header="Notifications">
+            <StackPanel>
+                <CheckBox Content="Get notifications on new releases" Margin="5"/>
+                <CheckBox Content="Get notifications on Seasonal releases" Margin="5"/>
+                <CheckBox Content="" Margin="5"/>
+                <CheckBox Content="" Margin="5"/>
+            </StackPanel>
+        </TabItem>
+        
+        <TabItem Header="Account">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Name="AccountNameText" Margin="5"/>
+                    <Button Content="Authorise" Margin="5" Click="StartAuthFlow" hc:BorderElement.CornerRadius="3"/>
+                </StackPanel>
+            </StackPanel>
+        </TabItem>
+        
+        <TabItem Header="Library">
+            
+        </TabItem>
+    </TabControl>
+</hc:Window>

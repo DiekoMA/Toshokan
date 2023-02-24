@@ -1,0 +1,24 @@
+﻿<hc:Window x:Class="Toshokan.Dialogs.FirstStartDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Toshokan.Dialogs"
+        mc:Ignorable="d"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        Title="FirstStartDialog" Height="450" Width="800">
+    <DockPanel>
+        <hc:StepBar Name="StartupStepBar" DockPanel.Dock="Top">
+            <hc:StepBarItem Content="Add An Account"/>
+            <hc:StepBarItem Content="Set up your preferences"/>
+            <hc:StepBarItem Content="Set up notifications"/>
+            <hc:StepBarItem Content="Finish"/>
+        </hc:StepBar>
+        <hc:ButtonGroup DockPanel.Dock="Bottom">
+            <Button Name="ButtonBack" Content="Back" Click="ButtonBack_OnClick"/>
+            <Button Name="ButtonNext" Content="Next" Click="ButtonNext_OnClick"/>
+        </hc:ButtonGroup>
+        <Frame Name="StartupFrame"/>
+    </DockPanel>
+</hc:Window>

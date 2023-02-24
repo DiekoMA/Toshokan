@@ -1,0 +1,42 @@
+﻿<hc:Window x:Class="Toshokan.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Toshokan"
+        mc:Ignorable="d"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        ResizeMode="CanMinimize"
+        ShowInTaskbar="True"
+        AllowDrop="True"
+        Drop="MainWindow_OnDrop"
+        Height="531" Width="1068">
+    
+    <hc:Window.TaskbarItemInfo>
+        <TaskbarItemInfo>
+            <TaskbarItemInfo.ThumbButtonInfos>
+                <ThumbButtonInfo Description="Test"/>
+            </TaskbarItemInfo.ThumbButtonInfos>
+        </TaskbarItemInfo>
+    </hc:Window.TaskbarItemInfo>
+    
+    <hc:Window.NonClientAreaContent>
+        <DockPanel LastChildFill="False" VerticalAlignment="Stretch">
+            <TextBlock Text="Toshokan" DockPanel.Dock="Left" VerticalAlignment="Center"/>
+        </DockPanel>
+    </hc:Window.NonClientAreaContent>
+    
+    <DockPanel>
+        <hc:SideMenu DockPanel.Dock="Left" Width="160">
+            <hc:SideMenuItem Header="Anime List" Icon="{iconPacks:BoxIcons Kind=RegularTv}" Selected="LibrarySideMenuItem_OnSelected"/>
+            <hc:SideMenuItem Header="Manga List" Icon="{iconPacks:BoxIcons Kind=RegularBook}" Selected="LibrarySideMenuItem_OnSelected"/>
+            <hc:SideMenuItem Header="Search" Icon="{iconPacks:BoxIcons Kind=RegularSearch}" Selected="ExploreSideMenuItem_OnSelected"/>
+            <hc:SideMenuItem Header="Schedule" Icon="{iconPacks:BoxIcons Kind=RegularCalendar}" Selected="ScheduleSideMenuItem_OnSelected"/>
+            <hc:SideMenuItem Height="212" IsEnabled="False" Visibility="Hidden" />
+            <hc:SideMenuItem Header="Account" Icon="{iconPacks:BoxIcons Kind=RegularUser}" Selected="AccountSideMenuItem_OnSelected"/>
+            <hc:SideMenuItem Header="Settings" Icon="{iconPacks:BoxIcons Kind=RegularCog}" Selected="SettingsSideMenuItem_OnSelected"/>
+        </hc:SideMenu>
+        <Frame Name="ContentFrame" NavigationUIVisibility="Hidden"/>
+    </DockPanel>
+</hc:Window>
